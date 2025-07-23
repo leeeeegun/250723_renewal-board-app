@@ -8,6 +8,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -32,4 +34,8 @@ public class BoardEntity {
     private int fileAttached;
 
     private LocalDateTime created = LocalDateTime.now();
+
+    @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FileEntity> fileList = new ArrayList<>();
+
 }
