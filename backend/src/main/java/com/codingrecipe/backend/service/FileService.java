@@ -2,6 +2,7 @@ package com.codingrecipe.backend.service;
 
 import com.codingrecipe.backend.entity.BoardEntity;
 import com.codingrecipe.backend.entity.FileEntity;
+import com.codingrecipe.backend.repository.FileRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import org.springframework.stereotype.Service;
