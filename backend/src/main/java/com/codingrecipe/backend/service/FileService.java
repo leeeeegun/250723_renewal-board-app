@@ -8,6 +8,7 @@ import lombok.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -21,17 +22,19 @@ public class FileService {
     private final FileRepository fileRepository;
 
     public FileEntity saveFile(MultipartFile multipartFile, BoardEntity boardEntity) throws IOException {
-        String originalFileName = multipartFile.getOriginalFilename();
-        String uuid = UUID.randomUUID().toString();
-        String storedFileName = uuid + "_" + originalFileName;
-        String filePath = fileDir + storedFileName;
+    String originalFileName = multipartFile.getOriginalFilename();
+    String uuid = UUID.randomUUID().toString();
+    String storedFileName = uuid + "_" + originalFileName;
+    String filePath = fileDir + storedFileName;
 
-        FileEntity fileEntity = new FileEntity();
-        fileEntity.setOriginalFileName(originalFileName);
-        fileEntity.setStoredFileName(storedFileName);
-        fileEntity.setFilePath(filePath);
-        fileEntity.setBoard(boardEntity);
+    multipartFile.transferTo(new File(filePath));
 
-        return fileRepository.save(fileEntity);
-    }
+    FileEntity fileEntity = new FileEntity();
+    fileEntity.setOriginalFileName(originalFileName);
+    fileEntity.setStoredFileName(storedFileName);
+    fileEntity.setFilePath(filePath);
+    fileEntity.setBoard(boardEntity);
+
+    return fileRepository.save(fileEntity);
+}
 }
