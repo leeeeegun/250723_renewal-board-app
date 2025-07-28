@@ -2,6 +2,7 @@ package com.codingrecipe.backend.service;
 
 import com.codingrecipe.backend.entity.BoardEntity;
 import com.codingrecipe.backend.repository.BoardRepository;
+import com.codingrecipe.backend.repository.FileRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,9 +18,9 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class BoardService {
     private final BoardRepository boardRepository;
-    private final BoardFileRepository boardFileRepository;
+    private final FileRepository fileRepository;
 
-    private final String filePath = "/Users/leegun/Desktop/개발/프로젝트/renewal-board-app/upload/";
+//    private final String filePath = "/Users/leegun/Desktop/개발/프로젝트/renewal-board-app/upload/";
 
     @Transactional
     public void save(BoardDTO boardDTO, List<MultipartFile> boardFiles) throws IOException {
