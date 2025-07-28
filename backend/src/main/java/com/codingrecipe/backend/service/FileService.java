@@ -22,19 +22,21 @@ public class FileService {
     private final FileRepository fileRepository;
 
     public FileEntity saveFile(MultipartFile multipartFile, BoardEntity boardEntity) throws IOException {
-    String originalFileName = multipartFile.getOriginalFilename();
-    String uuid = UUID.randomUUID().toString();
-    String storedFileName = uuid + "_" + originalFileName;
-    String filePath = fileDir + storedFileName;
+        String originalFileName = multipartFile.getOriginalFilename();
+        String uuid = UUID.randomUUID().toString();
+        String storedFileName = uuid + "_" + originalFileName;
+        String filePath = fileDir + storedFileName;
 
-    multipartFile.transferTo(new File(filePath));
+        multipartFile.transferTo(new File(filePath));
 
-    FileEntity fileEntity = new FileEntity();
-    fileEntity.setOriginalFileName(originalFileName);
-    fileEntity.setStoredFileName(storedFileName);
-    fileEntity.setFilePath(filePath);
-    fileEntity.setBoard(boardEntity);
+        FileEntity fileEntity = new FileEntity();
+        fileEntity.setOriginalFileName(originalFileName);
+        fileEntity.setStoredFileName(storedFileName);
+        fileEntity.setFilePath(filePath);
+        fileEntity.setBoard(boardEntity);
 
-    return fileRepository.save(fileEntity);
+        return fileRepository.save(fileEntity);
+    }
 }
-}
+
+

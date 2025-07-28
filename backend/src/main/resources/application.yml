@@ -18,4 +18,4 @@ spring:
 
 # 파일 업로드 경로 (OS에 따라 수정 필요)
 file:
-  dir: C:/renewal-board-app/upload/
+  dir: /Users/leegun/Documents/spring_upload_files/
