@@ -32,7 +32,7 @@ public class BoardService {
         boardEntity.setBoardPass(boardDTO.getBoardPass());
         boardEntity.setBoardContent(boardDTO.getBoardContent());
         boardEntity.setBoardHits(0);
-        boardEntity.setFileAttached(boardFiles != null && !boardFiles.isEmpty() && !boardFiles.get(0).isEmpty() ? 1 : 0));
+        boardEntity.setFileAttached(boardFiles != null && !boardFiles.isEmpty() && !boardFiles.get(0).isEmpty() ? 1 : 0);
 
         BoardEntity savedBoard = boardRepository.save(boardEntity);
 

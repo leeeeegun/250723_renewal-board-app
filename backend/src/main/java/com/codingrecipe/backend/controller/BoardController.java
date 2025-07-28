@@ -1,5 +1,6 @@
 package com.codingrecipe.backend.controller;
 
+import com.codingrecipe.backend.dto.BoardDTO;
 import com.codingrecipe.backend.entity.BoardEntity;
 import com.codingrecipe.backend.service.BoardService;
 import lombok.Getter;
@@ -46,7 +47,7 @@ public class BoardController {
     public ResponseEntity<BoardEntity> getBoardById(@PathVariable long id) {
         Optional<BoardEntity> board = boardService.findById(id);
         if (board.isPresent()) {
-            boardService.updateHits(id);
+//            boardService.updateHits(id);
             return ResponseEntity.ok(board.get());
         } else {
             return ResponseEntity.noContent().build(); // 204 No Content 반환
