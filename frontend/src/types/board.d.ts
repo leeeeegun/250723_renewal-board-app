@@ -8,6 +8,7 @@ export interface FileResponse {
 
 // 게시글 응답 타입 (백엔드의 Entity or DTO 맞춰 정의)
 export interface Board {
+    id: number;
     boardTitle: string;
     boardWriter: string;
     boardPass: string;
