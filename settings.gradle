@@ -1,0 +1,3 @@
+rootProject.name = 'renewal-board-app' // 프로젝트의 진짜 이름
+include 'backend' // 백엔드 모듈을 포함시킨다는 뜻
+// include 'frontend' // 만약 프론트엔드도 Gradle 모듈이라면 포함 (아니면 주석 처리)
