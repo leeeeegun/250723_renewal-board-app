@@ -29,11 +29,18 @@ body {
   background: linear-gradient(to bottom right, var(--background-color), #E6F3F7);
 }
 
+/* 헤더가 콘텐츠와 확실히 분리 되기 위함 */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .app-main {
   flex: 1;
   padding: 30px;
   max-width: 1000px;
-  margin: 30px auto;
+  margin: 100px auto;
   background-color: #FFFFFF;
   border-radius: 25px;
   box-shadow: 0 10px 30px var(--shadow-color);
