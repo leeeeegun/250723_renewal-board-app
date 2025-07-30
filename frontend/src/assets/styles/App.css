@@ -8,11 +8,15 @@
   --text-color: #555555;
   --light-gray: #E0E0E0;
   --border-color: #D3D3D3;
+  --header-bg-rod: #FFFAFA;
   --shadow-color: rgba(174, 198, 207, 0.3);
+
+  --header-text-color: #FF6347;
+  --link-hover-color: #FF1493;
 }
 
 body {
-  font-family: 'BM Jua', cursive;
+  font-family: 'Jua', cursive;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,8 +26,8 @@ body {
 }
 
 .app-container {
-  display: flex;
   flex-direction: column;
+  display: flex;
   min-height: 100vh;
 
   background: linear-gradient(to bottom right, var(--background-color), #E6F3F7);
@@ -61,7 +65,7 @@ button {
   border-radius: 20px;
   cursor: pointer;
   font-size: 1.05rem;
-  font-family: 'Gaegu', cursive;
+  font-family: 'Jua', cursive;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -79,6 +83,6 @@ a {
 }
 
 a:hover {
-  color: #FF1493;
+  color: var(--link-hover-color);
   text-decoration: underline;
 }
