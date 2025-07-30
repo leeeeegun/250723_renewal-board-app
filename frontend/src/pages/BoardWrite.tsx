@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import {Board, BoardWriteRequest} from "../types/board";
 import '../assets/styles/BoardForm.css';
+import { Board, BoardWriteRequest } from '../types/board';
 
 const BoardWrite: React.FC = () => {
     const navigate = useNavigate();

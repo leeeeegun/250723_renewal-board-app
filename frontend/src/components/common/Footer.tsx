@@ -4,7 +4,7 @@ import '../../assets/styles/Footer.css';
 const Footer: React.FC = () => {
     return (
         <footer className="app-footer">
-            <p>&copy; 2025 익명 게시판. All rights reserved.</p>
+            <p>&copy; 2025 의건 월드. All rights reserved.</p>
         </footer>
     )
 }
