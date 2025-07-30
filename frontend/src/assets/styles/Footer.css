@@ -1,13 +1,16 @@
 .app-footer {
     background-color: var(--secondary-color);
     color: white;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
     margin-top: auto;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .app-footer p {
     margin: 0;
-    font-size: 0.9rem;
-    opacity: 0.8;
+    font-size: 1rem;
+    opacity: 0.9;
 }

@@ -1,80 +1,109 @@
 .board-detail-container {
-    padding: 20px;
+    padding: 30px;
 }
 
 .board-detail-container h2 {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: var(--primary-color);
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    word-break: break-word;
 }
 
 .board-meta-info {
     text-align: center;
     color: #777;
-    font-size: 0.9rem;
-    margin-bottom: 25px;
+    font-size: 1rem;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--light-gray);
 }
 
 .board-meta-info span {
-    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .board-content {
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    padding: 30px 0;
-    min-height: 200px;
-    line-height: 1.6;
-    font-size: 1.05rem;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 40px;
+    min-height: 250px;
+    line-height: 1.8;
+    font-size: 1.15rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
 }
 
 .board-files {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px dashed var(--border-color);
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px dashed var(--light-gray);
 }
 
 .board-files h4 {
-    margin-bottom: 10px;
-    color: var(--secondary-color);
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    text-align: center;
 }
 
 .file-images {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .attached-image {
-    max-width: 250px;
+    max-width: 200px;
     height: auto;
-    border-radius: 5px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.attached-image:hover {
+    transform: scale(1.05);
+    border-color: var(--accent-color);
 }
 
 .board-actions {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
+    gap: 15px;
+    margin-top: 40px;
 }
 
 .board-actions button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border-radius: 20px;
 }
 
 .board-actions .delete-button {
-    background-color: #f44336; /* 빨간색 */
+    background-color: #F47C7C;
+    box-shadow: 0 5px 15px rgba(244, 124, 124, 0.3);
 }
 
 .board-actions .delete-button:hover {
-    background-color: darken(#f44336, 10%); /* Sass/Less 문법, 직접 계산하거나 다른 값으로 대체 */
-    /* 예시: background-color: #d32f2f; */
+    background-color: #E25D5D;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(244, 124, 124, 0.4);
 }
 
 /* Modal Styles */
@@ -84,40 +113,67 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
 }
 
 .modal-content {
     background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 300px;
+    width: 350px; /* 너비 증가 */
+    max-width: 90%;
+    animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .modal-content h3 {
     margin-top: 0;
-    margin-bottom: 20px;
-    color: var(--secondary-color);
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
 }
 
 .modal-content input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 20px;
+    width: calc(100% - 30px);
+    padding: 12px;
+    margin-bottom: 25px;
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-family: 'Gaegu', cursive;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .modal-buttons button {
-    margin: 0 5px;
-    padding: 8px 15px;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-    color: white;
+    margin: 0 8px;
+    padding: 10px 20px;
+    border-radius: 18px;
+    font-size: 1rem;
+}
+
+.modal-buttons button:last-child {
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.modal-buttons button:last-child:hover {
+    background-color: #C0C0C0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }

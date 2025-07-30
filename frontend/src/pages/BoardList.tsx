@@ -13,7 +13,13 @@ const BoardList: React.FC = () => {
         const fetchBoards = async () => {
             try {
                 const response = await axios.get<Board[]>('http://localhost:8080/api/boards');
-                setBoards(response.data);
+                if (Array.isArray(response.data)) {
+                    setBoards(response.data);
+                } else {
+                    // 배열이 아닐 경우 오류 처리
+                    setError("API 응답 형식이 올바르지 않습니다. (배열이 아님)");
+                    console.error("API response data is not an array:", response.data);
+                }
             } catch (err) {
                 if (axios.isAxiosError(err)) {
                     setError(`게시글을 불러오는데 실패했습니다: ${err.message}`);
@@ -24,7 +30,6 @@ const BoardList: React.FC = () => {
             } finally {
                 setLoading(false);
             }
-
         };
         fetchBoards();
     }, []);
@@ -33,12 +38,13 @@ const BoardList: React.FC = () => {
     if (error) return <div className="error">{error}</div>;
 
     return (
-        <div className="board-List-container">
+        <div className="board-list-container">
             <h2>게시글 목록</h2>
             <div className="action-bar">
                 <Link to="/write" className="write-button">새 글 작성</Link>
             </div>
-            {boards.length === 0 ? (
+            {/* ✅ boards가 배열인지 확인 후 map 호출 */}
+            {boards && boards.length === 0 ? ( // boards가 null/undefined일 경우도 대비
                 <p className="no-boards">아직 작성된 게시글이 없습니다.</p>
             ) : (
                 <ul className="board-cards">
