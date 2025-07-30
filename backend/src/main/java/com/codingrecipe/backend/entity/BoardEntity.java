@@ -10,11 +10,12 @@ import lombok.ToString;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Getter
 @Setter
 @Entity
-@ToString
+@ToString(exclude = "fileList")
 @NoArgsConstructor
 @Table(name = "board_table")
 public class BoardEntity {
@@ -36,6 +37,7 @@ public class BoardEntity {
     private LocalDateTime created = LocalDateTime.now();
 
     @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<FileEntity> fileList = new ArrayList<>();
 
 }

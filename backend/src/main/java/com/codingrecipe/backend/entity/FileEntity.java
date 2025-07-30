@@ -1,16 +1,18 @@
 package com.codingrecipe.backend.entity;
 
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString(exclude = "board_table")
+@ToString(exclude = "board")
 @Table(name = "board_file_table")
 public class FileEntity {
 
@@ -24,5 +26,6 @@ public class FileEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "board_id")
+    @JsonBackReference
     private BoardEntity board;
 }
