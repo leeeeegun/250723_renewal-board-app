@@ -1,0 +1,123 @@
+.board-detail-container {
+    padding: 20px;
+}
+
+.board-detail-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.board-meta-info {
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.board-meta-info span {
+    margin: 0 10px;
+}
+
+.board-content {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 30px 0;
+    min-height: 200px;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.board-files {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.board-files h4 {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.file-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.attached-image {
+    max-width: 250px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.board-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.board-actions button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.board-actions .delete-button {
+    background-color: #f44336; /* 빨간색 */
+}
+
+.board-actions .delete-button:hover {
+    background-color: darken(#f44336, 10%); /* Sass/Less 문법, 직접 계산하거나 다른 값으로 대체 */
+    /* 예시: background-color: #d32f2f; */
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 300px;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.modal-content input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.modal-buttons button {
+    margin: 0 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+}

@@ -1,0 +1,80 @@
+.board-form-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.board-form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: calc(100% - 22px); /* Padding 고려 */
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical; /* 세로 크기 조절 가능 */
+    min-height: 150px;
+}
+
+.form-group input[type="file"] {
+    padding: 5px 0;
+}
+
+.file-previews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    border: 1px dashed var(--border-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.file-preview-image {
+    max-width: 100px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.form-actions button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+.form-actions .cancel-button {
+    background-color: #6c757d; /* 회색 */
+}
+
+.form-actions .cancel-button:hover {
+    background-color: darken(#6c757d, 10%); /* Sass/Less 문법, 직접 계산하거나 다른 값으로 대체 */
+    /* 예시: background-color: #5a6268; */
+}
