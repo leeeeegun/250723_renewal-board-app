@@ -1,8 +1,13 @@
 .app-header {
     background-color: var(--secondary-color);
     color: white;
-    padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    padding: 18px 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    position: sticky; /* 스크롤 시 상단 고정 */
+    top: 0;
+    z-index: 1000;
 }
 
 .header-container {
@@ -14,10 +19,12 @@
 }
 
 .app-logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: white;
+    font-family: "BM Jua", cursive;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #FF6347;
     text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* 로고에 그림자 */
 }
 
 .main-nav ul {
@@ -25,10 +32,19 @@
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: #FF6347;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .main-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
     text-decoration: none;
 }
